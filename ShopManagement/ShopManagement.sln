@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{91BA0B4B-2113-429A-A3D7-391C91A7BBB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{91BA0B4B-2113-429A-A3D7-391C91A7BBB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{28486F2F-22CD-43CA-AB45-8512BD90657A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{28486F2F-22CD-43CA-AB45-8512BD90657A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClothe", "TestingClothe\TestClothe.csproj", "{421A924E-29B0-4E4D-A689-D462083DF684}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClothe", "TestingClothe\TestClothe.csproj", "{421A924E-29B0-4E4D-A689-D462083DF684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEmployee", "TestEmployee\TestEmployee.csproj", "{1B0318CB-62E9-49AA-8C23-5C785D023B1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEmployee", "TestEmployee\TestEmployee.csproj", "{1B0318CB-62E9-49AA-8C23-5C785D023B1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClotheBusiness", "TestClotheContext\TestClotheBusiness.csproj", "{849FCF3A-5A33-490B-9B1C-CF587D7BF76E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClotheBusiness", "TestClotheContext\TestClotheBusiness.csproj", "{849FCF3A-5A33-490B-9B1C-CF587D7BF76E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEmployeeBusiness", "TestEmployeeContext\TestEmployeeBusiness.csproj", "{F5A6B055-E8D5-4655-A252-6E806B76177F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEmployeeBusiness", "TestEmployeeContext\TestEmployeeBusiness.csproj", "{F5A6B055-E8D5-4655-A252-6E806B76177F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BBEA4BBA-727C-4CB3-AC7E-259B485E8931}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Display", "Display\Display.csproj", "{856FC658-234D-4F1D-B43E-DFFAC6AB3BB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{F5A6B055-E8D5-4655-A252-6E806B76177F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5A6B055-E8D5-4655-A252-6E806B76177F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5A6B055-E8D5-4655-A252-6E806B76177F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856FC658-234D-4F1D-B43E-DFFAC6AB3BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856FC658-234D-4F1D-B43E-DFFAC6AB3BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856FC658-234D-4F1D-B43E-DFFAC6AB3BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856FC658-234D-4F1D-B43E-DFFAC6AB3BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
