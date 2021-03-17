@@ -32,13 +32,14 @@ namespace Display
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.typeBox = new System.Windows.Forms.ComboBox();
+            this.roleBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.wrongPassword = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -76,18 +77,19 @@ namespace Display
             this.label1.TabIndex = 1;
             this.label1.Text = "Login";
             // 
-            // typeBox
+            // roleBox
             // 
-            this.typeBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.typeBox.FormattingEnabled = true;
-            this.typeBox.Items.AddRange(new object[] {
+            this.roleBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roleBox.FormattingEnabled = true;
+            this.roleBox.Items.AddRange(new object[] {
             "ADMIN",
             "WORKER"});
-            this.typeBox.Location = new System.Drawing.Point(154, 238);
-            this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(236, 40);
-            this.typeBox.TabIndex = 2;
-            this.typeBox.Text = "Select Role";
+            this.roleBox.Location = new System.Drawing.Point(154, 239);
+            this.roleBox.Name = "roleBox";
+            this.roleBox.Size = new System.Drawing.Size(236, 40);
+            this.roleBox.TabIndex = 2;
+            this.roleBox.Text = "Select Role";
+            this.roleBox.SelectedIndexChanged += new System.EventHandler(this.typeBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -114,30 +116,33 @@ namespace Display
             // usernameBox
             // 
             this.usernameBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.usernameBox.Location = new System.Drawing.Point(154, 304);
+            this.usernameBox.Location = new System.Drawing.Point(154, 305);
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(236, 39);
             this.usernameBox.TabIndex = 5;
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // passwordBox
             // 
             this.passwordBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.passwordBox.Location = new System.Drawing.Point(154, 371);
+            this.passwordBox.Location = new System.Drawing.Point(154, 372);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(236, 39);
             this.passwordBox.TabIndex = 6;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // loginBtn
             // 
             this.loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.loginBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.loginBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.loginBtn.Location = new System.Drawing.Point(85, 463);
+            this.loginBtn.Location = new System.Drawing.Point(86, 472);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(221, 58);
             this.loginBtn.TabIndex = 7;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // pictureBox1
             // 
@@ -147,19 +152,30 @@ namespace Display
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+            // wrongPassword
+            // 
+            this.wrongPassword.AutoSize = true;
+            this.wrongPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.wrongPassword.ForeColor = System.Drawing.Color.Red;
+            this.wrongPassword.Location = new System.Drawing.Point(163, 414);
+            this.wrongPassword.Name = "wrongPassword";
+            this.wrongPassword.Size = new System.Drawing.Size(0, 37);
+            this.wrongPassword.TabIndex = 9;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(402, 558);
+            this.Controls.Add(this.wrongPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.typeBox);
+            this.Controls.Add(this.roleBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -180,13 +196,14 @@ namespace Display
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label exitBtn;
-        private System.Windows.Forms.ComboBox typeBox;
+        private System.Windows.Forms.ComboBox roleBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label wrongPassword;
     }
 }
 

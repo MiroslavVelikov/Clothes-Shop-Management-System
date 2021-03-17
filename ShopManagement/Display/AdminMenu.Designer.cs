@@ -132,6 +132,7 @@ namespace Display
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMenu";
             this.Text = "AdminMenu";
+            this.Load += new System.EventHandler(this.AdminMenu_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

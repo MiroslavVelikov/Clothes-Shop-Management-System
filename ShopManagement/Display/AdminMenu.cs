@@ -12,9 +12,10 @@ namespace Display
 {
     public partial class AdminMenu : Form
     {
-        public AdminMenu()
+        public AdminMenu(string username)
         {
             InitializeComponent();
+            usernameLabel.Text = username;
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -27,6 +28,16 @@ namespace Display
             var logout = new Login();
             this.Hide();
             logout.Show();
+        }
+
+        private void AdminMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AdminMenu_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
