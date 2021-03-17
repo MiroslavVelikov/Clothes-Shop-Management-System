@@ -2,8 +2,8 @@
 {
     /// <summary>
     /// class Clothe
-    /// Has properies: Id, Type, Name, Quantity, Price, Sex, Sector, City and Delivered
-    /// string: Type, Name, Sex, Sector, City
+    /// Has properies: Id, Type, Name, Quantity, Price, Sex, City and Delivered
+    /// string: Type, Name, Sex, City
     /// int: Id, Qunatity
     /// decimal: Price
     /// bool: Delivered
@@ -16,7 +16,6 @@
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public string Sex { get; set; }
-        public string Sector { get; set; }
         public string City { get; set; }
         public bool Delivered { get; set; }
     }
