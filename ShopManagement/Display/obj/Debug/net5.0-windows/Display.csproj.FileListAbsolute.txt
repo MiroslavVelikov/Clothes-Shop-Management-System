@@ -58,3 +58,4 @@ C:\Users\User\Desktop\ShopManagement\ShopManagement\Display\bin\Debug\net5.0-win
 C:\Users\User\Desktop\ShopManagement\ShopManagement\Display\bin\Debug\net5.0-windows\Business.pdb
 C:\Users\User\Desktop\ShopManagement\ShopManagement\Display\bin\Debug\net5.0-windows\Data.pdb
 C:\Users\User\Desktop\ShopManagement\ShopManagement\Display\obj\Debug\net5.0-windows\Display.csproj.CopyComplete
+C:\Users\User\Desktop\ShopManagement\ShopManagement\Display\obj\Debug\net5.0-windows\Display.AdminClothes.resources

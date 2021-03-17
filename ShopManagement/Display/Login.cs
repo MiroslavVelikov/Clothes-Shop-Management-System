@@ -1,17 +1,9 @@
-﻿using Business;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Data.Entities;
-
-namespace Display
+﻿namespace Display
 {
+    using Business;
+    using System;
+    using System.Windows.Forms;
+
     public partial class Login : Form
     {
         private EmployeeBusiness employeeBusiness = new EmployeeBusiness();
@@ -59,7 +51,7 @@ namespace Display
                     && employee.Password == password.Text 
                     && employee.Role == role.Text)
                 {
-                    var login = new AdminMenu(username.Text);
+                    var login = new AdminMenu();
                     this.Hide();
                     login.Show();
                 }
