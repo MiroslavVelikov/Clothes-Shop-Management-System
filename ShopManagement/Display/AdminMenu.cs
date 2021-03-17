@@ -24,7 +24,9 @@ namespace Display
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-
+            var logout = new Login();
+            this.Hide();
+            logout.Show();
         }
     }
 }
