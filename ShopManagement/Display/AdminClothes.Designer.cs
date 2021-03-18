@@ -56,9 +56,9 @@ namespace Display
             this.btnRefresh = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Label();
             this.clothesGrid = new System.Windows.Forms.DataGridView();
-            this.btnExit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -314,7 +314,7 @@ namespace Display
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-38, -12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(329, 208);
+            this.pictureBox1.Size = new System.Drawing.Size(323, 232);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -412,6 +412,18 @@ namespace Display
             this.panel2.TabIndex = 12;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnExit
+            // 
+            this.btnExit.AutoSize = true;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(747, -4);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(27, 32);
+            this.btnExit.TabIndex = 26;
+            this.btnExit.Text = "x";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // btnLogout
             // 
             this.btnLogout.AutoSize = true;
@@ -433,18 +445,6 @@ namespace Display
             this.clothesGrid.RowTemplate.Height = 25;
             this.clothesGrid.Size = new System.Drawing.Size(762, 407);
             this.clothesGrid.TabIndex = 15;
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSize = true;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(747, -4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(27, 32);
-            this.btnExit.TabIndex = 26;
-            this.btnExit.Text = "x";
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // AdminClothes
             // 

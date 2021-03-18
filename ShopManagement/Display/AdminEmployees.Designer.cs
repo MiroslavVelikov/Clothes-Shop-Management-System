@@ -33,7 +33,7 @@ namespace Display
             this.EmployeeGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.TypeTxt = new System.Windows.Forms.TextBox();
+            this.RoleTxt = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@ namespace Display
             this.CityLabel = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
+            this.labelRole = new System.Windows.Forms.Label();
             this.PasswordTxT = new System.Windows.Forms.TextBox();
             this.NameTxt = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -66,6 +66,9 @@ namespace Display
             this.CityDropBox = new System.Windows.Forms.ComboBox();
             this.ManageEmployeeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Label();
             this.labelCity = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -84,18 +87,15 @@ namespace Display
             this.label26 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Label();
-            this.btnMenu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeGrid
@@ -105,7 +105,7 @@ namespace Display
             this.EmployeeGrid.Location = new System.Drawing.Point(297, 181);
             this.EmployeeGrid.Name = "EmployeeGrid";
             this.EmployeeGrid.RowTemplate.Height = 25;
-            this.EmployeeGrid.Size = new System.Drawing.Size(755, 391);
+            this.EmployeeGrid.Size = new System.Drawing.Size(749, 391);
             this.EmployeeGrid.TabIndex = 16;
             // 
             // panel1
@@ -135,7 +135,7 @@ namespace Display
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Controls.Add(this.TypeTxt);
+            this.panel3.Controls.Add(this.RoleTxt);
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.RemoveButton);
             this.panel3.Controls.Add(this.UpdateButton);
@@ -146,7 +146,7 @@ namespace Display
             this.panel3.Controls.Add(this.CityLabel);
             this.panel3.Controls.Add(this.labelPassword);
             this.panel3.Controls.Add(this.labelName);
-            this.panel3.Controls.Add(this.labelType);
+            this.panel3.Controls.Add(this.labelRole);
             this.panel3.Controls.Add(this.PasswordTxT);
             this.panel3.Controls.Add(this.NameTxt);
             this.panel3.Controls.Add(this.pictureBox2);
@@ -156,13 +156,13 @@ namespace Display
             this.panel3.Size = new System.Drawing.Size(285, 584);
             this.panel3.TabIndex = 30;
             // 
-            // TypeTxt
+            // RoleTxt
             // 
-            this.TypeTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TypeTxt.Location = new System.Drawing.Point(144, 261);
-            this.TypeTxt.Name = "TypeTxt";
-            this.TypeTxt.Size = new System.Drawing.Size(126, 29);
-            this.TypeTxt.TabIndex = 30;
+            this.RoleTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RoleTxt.Location = new System.Drawing.Point(144, 261);
+            this.RoleTxt.Name = "RoleTxt";
+            this.RoleTxt.Size = new System.Drawing.Size(126, 29);
+            this.RoleTxt.TabIndex = 30;
             // 
             // AddButton
             // 
@@ -186,6 +186,7 @@ namespace Display
             this.RemoveButton.TabIndex = 28;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // UpdateButton
             // 
@@ -197,6 +198,7 @@ namespace Display
             this.UpdateButton.TabIndex = 27;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // SaveButton
             // 
@@ -291,16 +293,16 @@ namespace Display
             this.labelName.TabIndex = 17;
             this.labelName.Text = "Name";
             // 
-            // labelType
+            // labelRole
             // 
-            this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelType.ForeColor = System.Drawing.Color.White;
-            this.labelType.Location = new System.Drawing.Point(12, 255);
-            this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(65, 32);
-            this.labelType.TabIndex = 16;
-            this.labelType.Text = "Type";
+            this.labelRole.AutoSize = true;
+            this.labelRole.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelRole.ForeColor = System.Drawing.Color.White;
+            this.labelRole.Location = new System.Drawing.Point(12, 255);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(60, 32);
+            this.labelRole.TabIndex = 16;
+            this.labelRole.Text = "Role";
             // 
             // PasswordTxT
             // 
@@ -560,6 +562,39 @@ namespace Display
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.btnMenu);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(773, 32);
+            this.panel4.TabIndex = 17;
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.AutoSize = true;
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMenu.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnMenu.Location = new System.Drawing.Point(22, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(77, 32);
+            this.btnMenu.TabIndex = 27;
+            this.btnMenu.Text = "Menu";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoSize = true;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLogout.Location = new System.Drawing.Point(105, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(91, 32);
+            this.btnLogout.TabIndex = 26;
+            this.btnLogout.Text = "Logout";
+            // 
             // labelCity
             // 
             this.labelCity.AutoSize = true;
@@ -781,39 +816,6 @@ namespace Display
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.btnMenu);
-            this.panel4.Controls.Add(this.btnLogout);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(773, 32);
-            this.panel4.TabIndex = 17;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.AutoSize = true;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLogout.Location = new System.Drawing.Point(105, 0);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(91, 32);
-            this.btnLogout.TabIndex = 26;
-            this.btnLogout.Text = "Logout";
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.AutoSize = true;
-            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnMenu.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnMenu.Location = new System.Drawing.Point(22, 0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(77, 32);
-            this.btnMenu.TabIndex = 27;
-            this.btnMenu.Text = "Menu";
-            // 
             // AdminEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -837,11 +839,11 @@ namespace Display
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -873,7 +875,7 @@ namespace Display
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelCity;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox TypeTxt;
+        private System.Windows.Forms.TextBox RoleTxt;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button UpdateButton;
@@ -884,7 +886,7 @@ namespace Display
         private System.Windows.Forms.Label CityLabel;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelType;
+        private System.Windows.Forms.Label labelRole;
         private System.Windows.Forms.TextBox PasswordTxT;
         private System.Windows.Forms.TextBox NameTxt;
         private System.Windows.Forms.PictureBox pictureBox2;
