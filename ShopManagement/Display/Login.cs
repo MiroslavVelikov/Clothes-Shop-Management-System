@@ -47,13 +47,22 @@
 
             foreach (var employee in employees)
             {
-                if (employee.Name == username.Text 
-                    && employee.Password == password.Text 
+                if (employee.Name == username.Text
+                    && employee.Password == password.Text
                     && employee.Role == role.Text)
                 {
-                    var login = new AdminMenu();
                     this.Hide();
-                    login.Show();
+
+                    if (role.Text == "Manager" || role.Text == "Select Role")
+                    {
+                        var adminMenu = new AdminMenu();
+                        adminMenu.Show();
+                    }
+                    else
+                    {
+                        var employeeJob = new EmployeeJob(employee.Name, employee.Password);
+                        employeeJob.Show();
+                    }
                 }
             }
 

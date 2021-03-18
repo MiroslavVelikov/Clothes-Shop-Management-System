@@ -21,5 +21,10 @@ namespace Display
         {
 
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

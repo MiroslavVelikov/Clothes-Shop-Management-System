@@ -22,3 +22,15 @@ C:\Users\Traqn\Source\Repos\Clothes-Shop-Management-System\ShopManagement\Data\o
 C:\Users\Traqn\Source\Repos\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.dll
 C:\Users\Traqn\Source\Repos\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\ref\Data.dll
 C:\Users\Traqn\Source\Repos\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.pdb
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\bin\Debug\net5.0\Data.deps.json
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\bin\Debug\net5.0\Data.dll
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\bin\Debug\net5.0\ref\Data.dll
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\bin\Debug\net5.0\Data.pdb
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.AssemblyInfo.cs
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.dll
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\ref\Data.dll
+C:\Users\User\Desktop\Clothes-Shop-Management-System\ShopManagement\Data\obj\Debug\net5.0\Data.pdb

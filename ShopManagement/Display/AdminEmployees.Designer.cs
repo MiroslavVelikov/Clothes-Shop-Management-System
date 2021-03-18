@@ -32,6 +32,22 @@ namespace Display
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEmployees));
             this.EmployeeGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TypeTxt = new System.Windows.Forms.TextBox();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CityDropBoxTxt = new System.Windows.Forms.ComboBox();
+            this.CityLabel = new System.Windows.Forms.Label();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelType = new System.Windows.Forms.Label();
+            this.PasswordTxT = new System.Windows.Forms.TextBox();
+            this.NameTxt = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -50,24 +66,9 @@ namespace Display
             this.CityDropBox = new System.Windows.Forms.ComboBox();
             this.ManageEmployeeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelCity = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.labelCity = new System.Windows.Forms.Label();
-            this.NameTxt = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.CityDropBoxTxt = new System.Windows.Forms.ComboBox();
-            this.CityLabel = new System.Windows.Forms.Label();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.labelName = new System.Windows.Forms.Label();
-            this.labelType = new System.Windows.Forms.Label();
-            this.PasswordTxT = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
@@ -83,13 +84,12 @@ namespace Display
             this.label26 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.TypeTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +127,202 @@ namespace Display
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(285, 584);
             this.panel1.TabIndex = 17;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel3.Controls.Add(this.TypeTxt);
+            this.panel3.Controls.Add(this.AddButton);
+            this.panel3.Controls.Add(this.RemoveButton);
+            this.panel3.Controls.Add(this.UpdateButton);
+            this.panel3.Controls.Add(this.SaveButton);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.CityDropBoxTxt);
+            this.panel3.Controls.Add(this.CityLabel);
+            this.panel3.Controls.Add(this.labelPassword);
+            this.panel3.Controls.Add(this.labelName);
+            this.panel3.Controls.Add(this.labelType);
+            this.panel3.Controls.Add(this.PasswordTxT);
+            this.panel3.Controls.Add(this.NameTxt);
+            this.panel3.Controls.Add(this.pictureBox2);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(285, 584);
+            this.panel3.TabIndex = 30;
+            // 
+            // TypeTxt
+            // 
+            this.TypeTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TypeTxt.Location = new System.Drawing.Point(144, 261);
+            this.TypeTxt.Name = "TypeTxt";
+            this.TypeTxt.Size = new System.Drawing.Size(126, 29);
+            this.TypeTxt.TabIndex = 30;
+            // 
+            // AddButton
+            // 
+            this.AddButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AddButton.Location = new System.Drawing.Point(24, 485);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(114, 39);
+            this.AddButton.TabIndex = 29;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.RemoveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.RemoveButton.Location = new System.Drawing.Point(24, 540);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(114, 39);
+            this.RemoveButton.TabIndex = 28;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UpdateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.UpdateButton.Location = new System.Drawing.Point(156, 485);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(117, 39);
+            this.UpdateButton.TabIndex = 27;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.SaveButton.Location = new System.Drawing.Point(156, 540);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(117, 39);
+            this.SaveButton.TabIndex = 26;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(95, 460);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 32);
+            this.label4.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(95, 460);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 32);
+            this.label5.TabIndex = 24;
+            // 
+            // CityDropBoxTxt
+            // 
+            this.CityDropBoxTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CityDropBoxTxt.FormattingEnabled = true;
+            this.CityDropBoxTxt.Items.AddRange(new object[] {
+            "Cap",
+            "Hat",
+            "Shirt",
+            "Suit",
+            "Tie",
+            "Scarf",
+            "T-shirt",
+            "Hoodie",
+            "Sweater",
+            "Jacket",
+            "Coat",
+            "Dress",
+            "Gloves",
+            "Belt",
+            "Underwear",
+            "Shorts",
+            "Skirt",
+            "Socks",
+            "Shoes"});
+            this.CityDropBoxTxt.Location = new System.Drawing.Point(144, 401);
+            this.CityDropBoxTxt.Name = "CityDropBoxTxt";
+            this.CityDropBoxTxt.Size = new System.Drawing.Size(126, 29);
+            this.CityDropBoxTxt.TabIndex = 23;
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.CityLabel.ForeColor = System.Drawing.Color.White;
+            this.CityLabel.Location = new System.Drawing.Point(12, 398);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(55, 32);
+            this.CityLabel.TabIndex = 22;
+            this.CityLabel.Text = "City";
+            // 
+            // labelPassword
+            // 
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPassword.ForeColor = System.Drawing.Color.White;
+            this.labelPassword.Location = new System.Drawing.Point(12, 352);
+            this.labelPassword.Name = "labelPassword";
+            this.labelPassword.Size = new System.Drawing.Size(111, 32);
+            this.labelPassword.TabIndex = 18;
+            this.labelPassword.Text = "Password";
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelName.ForeColor = System.Drawing.Color.White;
+            this.labelName.Location = new System.Drawing.Point(12, 304);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(78, 32);
+            this.labelName.TabIndex = 17;
+            this.labelName.Text = "Name";
+            // 
+            // labelType
+            // 
+            this.labelType.AutoSize = true;
+            this.labelType.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelType.ForeColor = System.Drawing.Color.White;
+            this.labelType.Location = new System.Drawing.Point(12, 255);
+            this.labelType.Name = "labelType";
+            this.labelType.Size = new System.Drawing.Size(65, 32);
+            this.labelType.TabIndex = 16;
+            this.labelType.Text = "Type";
+            // 
+            // PasswordTxT
+            // 
+            this.PasswordTxT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PasswordTxT.Location = new System.Drawing.Point(144, 355);
+            this.PasswordTxT.Name = "PasswordTxT";
+            this.PasswordTxT.Size = new System.Drawing.Size(126, 29);
+            this.PasswordTxT.TabIndex = 7;
+            // 
+            // NameTxt
+            // 
+            this.NameTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NameTxt.Location = new System.Drawing.Point(144, 310);
+            this.NameTxt.Name = "NameTxt";
+            this.NameTxt.Size = new System.Drawing.Size(126, 29);
+            this.NameTxt.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-38, -12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(329, 160);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // btnAdd
             // 
@@ -357,6 +553,18 @@ namespace Display
             this.panel2.Size = new System.Drawing.Size(778, 113);
             this.panel2.TabIndex = 18;
             // 
+            // labelCity
+            // 
+            this.labelCity.AutoSize = true;
+            this.labelCity.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.labelCity.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.labelCity.Location = new System.Drawing.Point(100, 46);
+            this.labelCity.Name = "labelCity";
+            this.labelCity.Size = new System.Drawing.Size(100, 50);
+            this.labelCity.TabIndex = 16;
+            this.labelCity.Text = "City:";
+            // 
             // btnExit
             // 
             this.btnExit.AutoSize = true;
@@ -379,205 +587,6 @@ namespace Display
             this.label6.Size = new System.Drawing.Size(27, 32);
             this.label6.TabIndex = 28;
             this.label6.Text = "x";
-            // 
-            // labelCity
-            // 
-            this.labelCity.AutoSize = true;
-            this.labelCity.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.labelCity.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelCity.Location = new System.Drawing.Point(100, 46);
-            this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(100, 50);
-            this.labelCity.TabIndex = 16;
-            this.labelCity.Text = "City:";
-            // 
-            // NameTxt
-            // 
-            this.NameTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTxt.Location = new System.Drawing.Point(144, 310);
-            this.NameTxt.Name = "NameTxt";
-            this.NameTxt.Size = new System.Drawing.Size(126, 29);
-            this.NameTxt.TabIndex = 5;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Controls.Add(this.TypeTxt);
-            this.panel3.Controls.Add(this.AddButton);
-            this.panel3.Controls.Add(this.RemoveButton);
-            this.panel3.Controls.Add(this.UpdateButton);
-            this.panel3.Controls.Add(this.SaveButton);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.CityDropBoxTxt);
-            this.panel3.Controls.Add(this.CityLabel);
-            this.panel3.Controls.Add(this.labelPassword);
-            this.panel3.Controls.Add(this.labelName);
-            this.panel3.Controls.Add(this.labelType);
-            this.panel3.Controls.Add(this.PasswordTxT);
-            this.panel3.Controls.Add(this.NameTxt);
-            this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(285, 584);
-            this.panel3.TabIndex = 30;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.AddButton.Location = new System.Drawing.Point(24, 485);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(114, 39);
-            this.AddButton.TabIndex = 29;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RemoveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RemoveButton.Location = new System.Drawing.Point(24, 540);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(114, 39);
-            this.RemoveButton.TabIndex = 28;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            // 
-            // UpdateButton
-            // 
-            this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UpdateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.UpdateButton.Location = new System.Drawing.Point(156, 485);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(117, 39);
-            this.UpdateButton.TabIndex = 27;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.SaveButton.Location = new System.Drawing.Point(156, 540);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(117, 39);
-            this.SaveButton.TabIndex = 26;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(95, 460);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 32);
-            this.label4.TabIndex = 25;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(95, 460);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 32);
-            this.label5.TabIndex = 24;
-            // 
-            // CityDropBoxTxt
-            // 
-            this.CityDropBoxTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityDropBoxTxt.FormattingEnabled = true;
-            this.CityDropBoxTxt.Items.AddRange(new object[] {
-            "Cap",
-            "Hat",
-            "Shirt",
-            "Suit",
-            "Tie",
-            "Scarf",
-            "T-shirt",
-            "Hoodie",
-            "Sweater",
-            "Jacket",
-            "Coat",
-            "Dress",
-            "Gloves",
-            "Belt",
-            "Underwear",
-            "Shorts",
-            "Skirt",
-            "Socks",
-            "Shoes"});
-            this.CityDropBoxTxt.Location = new System.Drawing.Point(144, 401);
-            this.CityDropBoxTxt.Name = "CityDropBoxTxt";
-            this.CityDropBoxTxt.Size = new System.Drawing.Size(126, 29);
-            this.CityDropBoxTxt.TabIndex = 23;
-            // 
-            // CityLabel
-            // 
-            this.CityLabel.AutoSize = true;
-            this.CityLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityLabel.ForeColor = System.Drawing.Color.White;
-            this.CityLabel.Location = new System.Drawing.Point(12, 398);
-            this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(55, 32);
-            this.CityLabel.TabIndex = 22;
-            this.CityLabel.Text = "City";
-            // 
-            // labelPassword
-            // 
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(12, 352);
-            this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(111, 32);
-            this.labelPassword.TabIndex = 18;
-            this.labelPassword.Text = "Password";
-            // 
-            // labelName
-            // 
-            this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.ForeColor = System.Drawing.Color.White;
-            this.labelName.Location = new System.Drawing.Point(12, 304);
-            this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(78, 32);
-            this.labelName.TabIndex = 17;
-            this.labelName.Text = "Name";
-            // 
-            // labelType
-            // 
-            this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelType.ForeColor = System.Drawing.Color.White;
-            this.labelType.Location = new System.Drawing.Point(12, 255);
-            this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(65, 32);
-            this.labelType.TabIndex = 16;
-            this.labelType.Text = "Type";
-            // 
-            // PasswordTxT
-            // 
-            this.PasswordTxT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordTxT.Location = new System.Drawing.Point(144, 355);
-            this.PasswordTxT.Name = "PasswordTxT";
-            this.PasswordTxT.Size = new System.Drawing.Size(126, 29);
-            this.PasswordTxT.TabIndex = 7;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-38, -12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(329, 160);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // textBox5
             // 
@@ -765,14 +774,6 @@ namespace Display
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // TypeTxt
-            // 
-            this.TypeTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TypeTxt.Location = new System.Drawing.Point(144, 261);
-            this.TypeTxt.Name = "TypeTxt";
-            this.TypeTxt.Size = new System.Drawing.Size(126, 29);
-            this.TypeTxt.TabIndex = 30;
-            // 
             // AdminEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -790,12 +791,12 @@ namespace Display
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
