@@ -84,6 +84,9 @@ namespace Display
             this.label26 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Label();
+            this.btnMenu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,16 +95,17 @@ namespace Display
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // EmployeeGrid
             // 
             this.EmployeeGrid.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.EmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeGrid.Location = new System.Drawing.Point(297, 162);
+            this.EmployeeGrid.Location = new System.Drawing.Point(297, 181);
             this.EmployeeGrid.Name = "EmployeeGrid";
             this.EmployeeGrid.RowTemplate.Height = 25;
-            this.EmployeeGrid.Size = new System.Drawing.Size(755, 410);
+            this.EmployeeGrid.Size = new System.Drawing.Size(755, 391);
             this.EmployeeGrid.TabIndex = 16;
             // 
             // panel1
@@ -319,7 +323,7 @@ namespace Display
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(-38, -12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(329, 160);
+            this.pictureBox2.Size = new System.Drawing.Size(329, 225);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -492,9 +496,9 @@ namespace Display
             this.RefreshButton.BackColor = System.Drawing.Color.White;
             this.RefreshButton.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.RefreshButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RefreshButton.Location = new System.Drawing.Point(458, 53);
+            this.RefreshButton.Location = new System.Drawing.Point(467, 101);
             this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(228, 45);
+            this.RefreshButton.Size = new System.Drawing.Size(198, 45);
             this.RefreshButton.TabIndex = 15;
             this.RefreshButton.Text = "REFRESH";
             this.RefreshButton.UseVisualStyleBackColor = false;
@@ -525,7 +529,7 @@ namespace Display
             "Skirt",
             "Socks",
             "Shoes"});
-            this.CityDropBox.Location = new System.Drawing.Point(206, 53);
+            this.CityDropBox.Location = new System.Drawing.Point(204, 103);
             this.CityDropBox.Name = "CityDropBox";
             this.CityDropBox.Size = new System.Drawing.Size(233, 45);
             this.CityDropBox.TabIndex = 14;
@@ -535,7 +539,7 @@ namespace Display
             this.ManageEmployeeLabel.AutoSize = true;
             this.ManageEmployeeLabel.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ManageEmployeeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ManageEmployeeLabel.Location = new System.Drawing.Point(261, 0);
+            this.ManageEmployeeLabel.Location = new System.Drawing.Point(233, 48);
             this.ManageEmployeeLabel.Name = "ManageEmployeeLabel";
             this.ManageEmployeeLabel.Size = new System.Drawing.Size(343, 50);
             this.ManageEmployeeLabel.TabIndex = 0;
@@ -544,14 +548,17 @@ namespace Display
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.labelCity);
             this.panel2.Controls.Add(this.ManageEmployeeLabel);
             this.panel2.Controls.Add(this.CityDropBox);
             this.panel2.Controls.Add(this.RefreshButton);
-            this.panel2.Location = new System.Drawing.Point(282, 35);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(285, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(778, 113);
+            this.panel2.Size = new System.Drawing.Size(773, 163);
             this.panel2.TabIndex = 18;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // labelCity
             // 
@@ -559,7 +566,7 @@ namespace Display
             this.labelCity.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.labelCity.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelCity.Location = new System.Drawing.Point(100, 46);
+            this.labelCity.Location = new System.Drawing.Point(105, 96);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(100, 50);
             this.labelCity.TabIndex = 16;
@@ -774,6 +781,39 @@ namespace Display
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.btnMenu);
+            this.panel4.Controls.Add(this.btnLogout);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(773, 32);
+            this.panel4.TabIndex = 17;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.AutoSize = true;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLogout.Location = new System.Drawing.Point(105, 0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(91, 32);
+            this.btnLogout.TabIndex = 26;
+            this.btnLogout.Text = "Logout";
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.AutoSize = true;
+            this.btnMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMenu.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnMenu.Location = new System.Drawing.Point(22, 0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(77, 32);
+            this.btnMenu.TabIndex = 27;
+            this.btnMenu.Text = "Menu";
+            // 
             // AdminEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -800,6 +840,8 @@ namespace Display
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -861,5 +903,8 @@ namespace Display
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label btnLogout;
+        private System.Windows.Forms.Label btnMenu;
     }
 }
