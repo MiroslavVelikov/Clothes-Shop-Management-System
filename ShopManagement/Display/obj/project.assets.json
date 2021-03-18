@@ -5699,26 +5699,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Traqn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\ShopManagement\\ShopManagement\\Display\\Display.csproj",
+      "projectUniqueName": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Display\\Display.csproj",
       "projectName": "Display",
-      "projectPath": "C:\\Users\\User\\Desktop\\ShopManagement\\ShopManagement\\Display\\Display.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\ShopManagement\\ShopManagement\\Display\\obj\\",
+      "projectPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Display\\Display.csproj",
+      "packagesPath": "C:\\Users\\Traqn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Display\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Traqn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5732,8 +5725,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\ShopManagement\\ShopManagement\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\ShopManagement\\ShopManagement\\Business\\Business.csproj"
+            "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Business\\Business.csproj"
             }
           }
         }
@@ -5765,7 +5758,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
