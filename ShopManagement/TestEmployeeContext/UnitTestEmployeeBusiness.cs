@@ -1,14 +1,12 @@
 namespace TestEmployeeContext
-
 {
-    using NUnit.Framework;
-    using Data.Entities;
     using Business;
+    using Data.Entities;
+    using NUnit.Framework;
     using System.Collections.Generic;
 
     public class Tests
     {
-
         private EmployeeBusiness employeeBusiness = new EmployeeBusiness();
 
         [Test]
@@ -19,8 +17,7 @@ namespace TestEmployeeContext
                 Name = "Stoyan",
                 Role = "Admin",
                 Password = "StoyanTodorov12435",
-                City = "Aytos",
-                Salary = 1400
+                City = "Aytos"
             };
 
             Assert.AreEqual("The employee was added", employeeBusiness.Add(employee),
@@ -32,7 +29,7 @@ namespace TestEmployeeContext
         {
             List<Employee> employees = employeeBusiness.GetAll();
 
-            Assert.AreEqual(employees, employeeBusiness.GetAll(), "Employee cant be added to database");
+            Assert.AreEqual(employees.Count, employeeBusiness.GetAll().Count, "Employee cant be added to database");
         }
 
         [Test]
@@ -64,8 +61,8 @@ namespace TestEmployeeContext
             var employees = employeeBusiness.GetAll();
             var employeeId = employees[employees.Count - 1].Id;
 
-            Assert.AreEqual("Clothe was deleted", employeeBusiness.Delete(employeeId),
-                "Clothe has a different name");
+            Assert.AreEqual("Employee was deleted", employeeBusiness.Delete(employeeId),
+                "Employee has a different name");
         }
 
         [Test]

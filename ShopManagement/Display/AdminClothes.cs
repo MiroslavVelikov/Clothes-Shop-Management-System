@@ -221,6 +221,10 @@
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
+            var lastLogBusiness = new LastLogBusiness();
+            var log = lastLogBusiness.Get(1);
+            log.IsLogedIn = false;
+            lastLogBusiness.Update(log);
             var logout = new Login();
             this.Hide();
             logout.Show();

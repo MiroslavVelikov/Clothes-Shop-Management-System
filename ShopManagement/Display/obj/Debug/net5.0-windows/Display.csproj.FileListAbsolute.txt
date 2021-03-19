@@ -185,3 +185,4 @@ C:\Users\User\Desktop\Shop-Management\ShopManagement\Display\obj\Debug\net5.0-wi
 C:\Users\User\Desktop\Shop-Management\ShopManagement\Display\obj\Debug\net5.0-windows\ref\Display.dll
 C:\Users\User\Desktop\Shop-Management\ShopManagement\Display\obj\Debug\net5.0-windows\Display.pdb
 C:\Users\User\Desktop\Shop-Management\ShopManagement\Display\obj\Debug\net5.0-windows\Display.genruntimeconfig.cache
+C:\Users\User\Desktop\Shop-Management\ShopManagement\Display\obj\Debug\net5.0-windows\Display.Splash.resources

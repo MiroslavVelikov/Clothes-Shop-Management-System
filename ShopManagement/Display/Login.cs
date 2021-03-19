@@ -1,12 +1,14 @@
 ﻿namespace Display
 {
-    using Business;
     using System;
+    using Business;
     using System.Windows.Forms;
+    using Data.Entities;
 
     public partial class Login : Form
     {
         private EmployeeBusiness employeeBusiness = new EmployeeBusiness();
+        private LastLogBusiness lastLogBusiness = new LastLogBusiness();
 
         public Login()
         {
@@ -44,6 +46,13 @@
             var password = passwordBox;
             var role = roleBox;
             var employees = employeeBusiness.GetAll();
+            
+            var log = lastLogBusiness.Get(1);
+            log.Name = username.Text;
+            log.Password = password.Text;
+            log.Role = role.Text;
+            log.IsLogedIn = true;
+            lastLogBusiness.Update(log);
 
             foreach (var employee in employees)
             {

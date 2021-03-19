@@ -1,6 +1,7 @@
 ﻿namespace Display
 {
     using System;
+    using Business;
     using System.Windows.Forms;
 
     public partial class AdminMenu : Form
@@ -17,6 +18,11 @@
 
         private void logoutBtn_Click(object sender, EventArgs e)
         {
+            var lastLogBusiness = new LastLogBusiness();
+            var log = lastLogBusiness.Get(1);
+            log.IsLogedIn = false;
+            lastLogBusiness.Update(log);
+            
             var logout = new Login();
             this.Hide();
             logout.Show();

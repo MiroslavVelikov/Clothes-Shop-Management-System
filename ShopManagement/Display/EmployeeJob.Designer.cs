@@ -65,7 +65,7 @@
             this.txtCityName.AutoSize = true;
             this.txtCityName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCityName.ForeColor = System.Drawing.Color.White;
-            this.txtCityName.Location = new System.Drawing.Point(442, -1);
+            this.txtCityName.Location = new System.Drawing.Point(464, 0);
             this.txtCityName.Name = "txtCityName";
             this.txtCityName.Size = new System.Drawing.Size(124, 32);
             this.txtCityName.TabIndex = 32;
@@ -76,7 +76,7 @@
             this.btnLogout.AutoSize = true;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogout.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnLogout.Location = new System.Drawing.Point(833, -1);
+            this.btnLogout.Location = new System.Drawing.Point(21, -1);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(91, 32);
             this.btnLogout.TabIndex = 28;

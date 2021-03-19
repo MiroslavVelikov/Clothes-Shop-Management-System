@@ -1,8 +1,8 @@
 namespace TestClotheContext
 {
-    using NUnit.Framework;
     using Business;
     using Data.Entities;
+    using NUnit.Framework;
     using System.Collections.Generic;
 
     public class Tests
@@ -33,7 +33,7 @@ namespace TestClotheContext
         {
             List<Clothe> clothes = clotheBusiness.GetAll();
 
-            Assert.AreEqual(clothes, clotheBusiness.GetAll(), "Clothe cant be added to database");
+            Assert.AreEqual(clothes.Count, clotheBusiness.GetAll().Count, "Clothe cant be added to database");
         }
 
         [Test]

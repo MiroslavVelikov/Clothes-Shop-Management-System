@@ -1,8 +1,7 @@
 namespace TestEmployee
 {
-    using NUnit.Framework;
     using Data.Entities;
-
+    using NUnit.Framework;
 
     public class Tests
     {
@@ -52,16 +51,5 @@ namespace TestEmployee
 
             Assert.AreEqual("Aytos", employee.City, "Employee work in a different");
         }
-
-        [Test]
-        public void EmployeeSalaryTest ()
-        {
-            Employee employee = new Employee();
-            employee.Salary = 1420;
-
-            Assert.AreEqual(1420, employee.Salary, "Employee salary is different");
-        }
-
-
     }
 }
