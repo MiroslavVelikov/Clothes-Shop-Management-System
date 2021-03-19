@@ -96,6 +96,7 @@ namespace Display
             this.workersBtn.TabIndex = 9;
             this.workersBtn.Text = "WORKERS";
             this.workersBtn.UseVisualStyleBackColor = false;
+            this.workersBtn.Click += new System.EventHandler(this.workersBtn_Click);
             // 
             // logoutBtn
             // 

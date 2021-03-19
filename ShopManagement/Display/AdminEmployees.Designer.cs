@@ -30,23 +30,23 @@ namespace Display
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEmployees));
-            this.EmployeeGrid = new System.Windows.Forms.DataGridView();
+            this.employeeGrid = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.RoleTxt = new System.Windows.Forms.TextBox();
+            this.txtRole = new System.Windows.Forms.ComboBox();
             this.AddButton = new System.Windows.Forms.Button();
             this.RemoveButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.CityDropBoxTxt = new System.Windows.Forms.ComboBox();
+            this.txtCity = new System.Windows.Forms.ComboBox();
             this.CityLabel = new System.Windows.Forms.Label();
             this.labelPassword = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelRole = new System.Windows.Forms.Label();
-            this.PasswordTxT = new System.Windows.Forms.TextBox();
-            this.NameTxt = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtNam = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -62,8 +62,8 @@ namespace Display
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.RefreshButton = new System.Windows.Forms.Button();
-            this.CityDropBox = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtCityType = new System.Windows.Forms.ComboBox();
             this.ManageEmployeeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -87,7 +87,7 @@ namespace Display
             this.label26 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,15 +98,15 @@ namespace Display
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
-            // EmployeeGrid
+            // employeeGrid
             // 
-            this.EmployeeGrid.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.EmployeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmployeeGrid.Location = new System.Drawing.Point(297, 181);
-            this.EmployeeGrid.Name = "EmployeeGrid";
-            this.EmployeeGrid.RowTemplate.Height = 25;
-            this.EmployeeGrid.Size = new System.Drawing.Size(749, 391);
-            this.EmployeeGrid.TabIndex = 16;
+            this.employeeGrid.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.employeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.employeeGrid.Location = new System.Drawing.Point(291, 172);
+            this.employeeGrid.Name = "employeeGrid";
+            this.employeeGrid.RowTemplate.Height = 25;
+            this.employeeGrid.Size = new System.Drawing.Size(762, 407);
+            this.employeeGrid.TabIndex = 16;
             // 
             // panel1
             // 
@@ -129,50 +129,54 @@ namespace Display
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(285, 584);
+            this.panel1.Size = new System.Drawing.Size(285, 591);
             this.panel1.TabIndex = 17;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel3.Controls.Add(this.RoleTxt);
+            this.panel3.Controls.Add(this.txtRole);
             this.panel3.Controls.Add(this.AddButton);
             this.panel3.Controls.Add(this.RemoveButton);
             this.panel3.Controls.Add(this.UpdateButton);
             this.panel3.Controls.Add(this.SaveButton);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.CityDropBoxTxt);
+            this.panel3.Controls.Add(this.txtCity);
             this.panel3.Controls.Add(this.CityLabel);
             this.panel3.Controls.Add(this.labelPassword);
             this.panel3.Controls.Add(this.labelName);
             this.panel3.Controls.Add(this.labelRole);
-            this.panel3.Controls.Add(this.PasswordTxT);
-            this.panel3.Controls.Add(this.NameTxt);
+            this.panel3.Controls.Add(this.txtPassword);
+            this.panel3.Controls.Add(this.txtNam);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(285, 584);
+            this.panel3.Size = new System.Drawing.Size(285, 591);
             this.panel3.TabIndex = 30;
             // 
-            // RoleTxt
+            // txtRole
             // 
-            this.RoleTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RoleTxt.Location = new System.Drawing.Point(144, 261);
-            this.RoleTxt.Name = "RoleTxt";
-            this.RoleTxt.Size = new System.Drawing.Size(126, 29);
-            this.RoleTxt.TabIndex = 30;
+            this.txtRole.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtRole.FormattingEnabled = true;
+            this.txtRole.Items.AddRange(new object[] {
+            "Manager",
+            "Employee"});
+            this.txtRole.Location = new System.Drawing.Point(144, 261);
+            this.txtRole.Name = "txtRole";
+            this.txtRole.Size = new System.Drawing.Size(126, 29);
+            this.txtRole.TabIndex = 31;
             // 
             // AddButton
             // 
             this.AddButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.AddButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.AddButton.Location = new System.Drawing.Point(24, 485);
+            this.AddButton.Location = new System.Drawing.Point(9, 495);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(114, 39);
+            this.AddButton.Size = new System.Drawing.Size(129, 39);
             this.AddButton.TabIndex = 29;
-            this.AddButton.Text = "Add";
+            this.AddButton.Text = "ADD";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
@@ -180,11 +184,11 @@ namespace Display
             // 
             this.RemoveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.RemoveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RemoveButton.Location = new System.Drawing.Point(24, 540);
+            this.RemoveButton.Location = new System.Drawing.Point(9, 540);
             this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(114, 39);
+            this.RemoveButton.Size = new System.Drawing.Size(129, 39);
             this.RemoveButton.TabIndex = 28;
-            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.Text = "REMOVE";
             this.RemoveButton.UseVisualStyleBackColor = true;
             this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
@@ -192,11 +196,11 @@ namespace Display
             // 
             this.UpdateButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.UpdateButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.UpdateButton.Location = new System.Drawing.Point(156, 485);
+            this.UpdateButton.Location = new System.Drawing.Point(144, 495);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(117, 39);
+            this.UpdateButton.Size = new System.Drawing.Size(129, 39);
             this.UpdateButton.TabIndex = 27;
-            this.UpdateButton.Text = "Update";
+            this.UpdateButton.Text = "UPDATE";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
@@ -204,12 +208,13 @@ namespace Display
             // 
             this.SaveButton.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.SaveButton.Location = new System.Drawing.Point(156, 540);
+            this.SaveButton.Location = new System.Drawing.Point(144, 540);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(117, 39);
+            this.SaveButton.Size = new System.Drawing.Size(129, 39);
             this.SaveButton.TabIndex = 26;
-            this.SaveButton.Text = "Save";
+            this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // label4
             // 
@@ -231,34 +236,19 @@ namespace Display
             this.label5.Size = new System.Drawing.Size(0, 32);
             this.label5.TabIndex = 24;
             // 
-            // CityDropBoxTxt
+            // txtCity
             // 
-            this.CityDropBoxTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CityDropBoxTxt.FormattingEnabled = true;
-            this.CityDropBoxTxt.Items.AddRange(new object[] {
-            "Cap",
-            "Hat",
-            "Shirt",
-            "Suit",
-            "Tie",
-            "Scarf",
-            "T-shirt",
-            "Hoodie",
-            "Sweater",
-            "Jacket",
-            "Coat",
-            "Dress",
-            "Gloves",
-            "Belt",
-            "Underwear",
-            "Shorts",
-            "Skirt",
-            "Socks",
-            "Shoes"});
-            this.CityDropBoxTxt.Location = new System.Drawing.Point(144, 401);
-            this.CityDropBoxTxt.Name = "CityDropBoxTxt";
-            this.CityDropBoxTxt.Size = new System.Drawing.Size(126, 29);
-            this.CityDropBoxTxt.TabIndex = 23;
+            this.txtCity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCity.FormattingEnabled = true;
+            this.txtCity.Items.AddRange(new object[] {
+            "Sofia",
+            "Plovdiv",
+            "Varna",
+            "Burgas"});
+            this.txtCity.Location = new System.Drawing.Point(144, 401);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(126, 29);
+            this.txtCity.TabIndex = 23;
             // 
             // CityLabel
             // 
@@ -304,21 +294,21 @@ namespace Display
             this.labelRole.TabIndex = 16;
             this.labelRole.Text = "Role";
             // 
-            // PasswordTxT
+            // txtPassword
             // 
-            this.PasswordTxT.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordTxT.Location = new System.Drawing.Point(144, 355);
-            this.PasswordTxT.Name = "PasswordTxT";
-            this.PasswordTxT.Size = new System.Drawing.Size(126, 29);
-            this.PasswordTxT.TabIndex = 7;
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtPassword.Location = new System.Drawing.Point(144, 355);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(126, 29);
+            this.txtPassword.TabIndex = 7;
             // 
-            // NameTxt
+            // txtNam
             // 
-            this.NameTxt.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTxt.Location = new System.Drawing.Point(144, 310);
-            this.NameTxt.Name = "NameTxt";
-            this.NameTxt.Size = new System.Drawing.Size(126, 29);
-            this.NameTxt.TabIndex = 5;
+            this.txtNam.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNam.Location = new System.Drawing.Point(144, 310);
+            this.txtNam.Name = "txtNam";
+            this.txtNam.Size = new System.Drawing.Size(126, 29);
+            this.txtNam.TabIndex = 5;
             // 
             // pictureBox2
             // 
@@ -493,55 +483,42 @@ namespace Display
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // RefreshButton
+            // btnRefresh
             // 
-            this.RefreshButton.BackColor = System.Drawing.Color.White;
-            this.RefreshButton.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.RefreshButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.RefreshButton.Location = new System.Drawing.Point(467, 101);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(198, 45);
-            this.RefreshButton.TabIndex = 15;
-            this.RefreshButton.Text = "REFRESH";
-            this.RefreshButton.UseVisualStyleBackColor = false;
+            this.btnRefresh.BackColor = System.Drawing.Color.White;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnRefresh.Location = new System.Drawing.Point(443, 103);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(228, 45);
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Text = "REFRESH";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // CityDropBox
+            // txtCityType
             // 
-            this.CityDropBox.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CityDropBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.CityDropBox.FormattingEnabled = true;
-            this.CityDropBox.Items.AddRange(new object[] {
+            this.txtCityType.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtCityType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.txtCityType.FormattingEnabled = true;
+            this.txtCityType.Items.AddRange(new object[] {
             "All",
-            "Cap",
-            "Hat",
-            "Shirt",
-            "Suit",
-            "Tie",
-            "Scarf",
-            "T-shirt",
-            "Hoodie",
-            "Sweater",
-            "Jacket",
-            "Coat",
-            "Dress",
-            "Gloves",
-            "Belt",
-            "Underwear",
-            "Shorts",
-            "Skirt",
-            "Socks",
-            "Shoes"});
-            this.CityDropBox.Location = new System.Drawing.Point(204, 103);
-            this.CityDropBox.Name = "CityDropBox";
-            this.CityDropBox.Size = new System.Drawing.Size(233, 45);
-            this.CityDropBox.TabIndex = 14;
+            "Sofia",
+            "Plovdiv",
+            "Varna",
+            "Burgas"});
+            this.txtCityType.Location = new System.Drawing.Point(180, 105);
+            this.txtCityType.Name = "txtCityType";
+            this.txtCityType.Size = new System.Drawing.Size(233, 45);
+            this.txtCityType.TabIndex = 14;
+            this.txtCityType.Text = "All";
             // 
             // ManageEmployeeLabel
             // 
             this.ManageEmployeeLabel.AutoSize = true;
             this.ManageEmployeeLabel.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ManageEmployeeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ManageEmployeeLabel.Location = new System.Drawing.Point(233, 48);
+            this.ManageEmployeeLabel.Location = new System.Drawing.Point(233, 35);
             this.ManageEmployeeLabel.Name = "ManageEmployeeLabel";
             this.ManageEmployeeLabel.Size = new System.Drawing.Size(343, 50);
             this.ManageEmployeeLabel.TabIndex = 0;
@@ -553,12 +530,12 @@ namespace Display
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.labelCity);
             this.panel2.Controls.Add(this.ManageEmployeeLabel);
-            this.panel2.Controls.Add(this.CityDropBox);
-            this.panel2.Controls.Add(this.RefreshButton);
+            this.panel2.Controls.Add(this.txtCityType);
+            this.panel2.Controls.Add(this.btnRefresh);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(285, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(773, 163);
+            this.panel2.Size = new System.Drawing.Size(774, 163);
             this.panel2.TabIndex = 18;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -570,7 +547,7 @@ namespace Display
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(773, 32);
+            this.panel4.Size = new System.Drawing.Size(774, 32);
             this.panel4.TabIndex = 17;
             // 
             // btnMenu
@@ -583,6 +560,7 @@ namespace Display
             this.btnMenu.Size = new System.Drawing.Size(77, 32);
             this.btnMenu.TabIndex = 27;
             this.btnMenu.Text = "Menu";
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnLogout
             // 
@@ -594,16 +572,17 @@ namespace Display
             this.btnLogout.Size = new System.Drawing.Size(91, 32);
             this.btnLogout.TabIndex = 26;
             this.btnLogout.Text = "Logout";
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // labelCity
             // 
             this.labelCity.AutoSize = true;
             this.labelCity.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.labelCity.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCity.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.labelCity.Location = new System.Drawing.Point(105, 96);
+            this.labelCity.Location = new System.Drawing.Point(97, 108);
             this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(100, 50);
+            this.labelCity.Size = new System.Drawing.Size(75, 40);
             this.labelCity.TabIndex = 16;
             this.labelCity.Text = "City:";
             // 
@@ -629,6 +608,7 @@ namespace Display
             this.label6.Size = new System.Drawing.Size(27, 32);
             this.label6.TabIndex = 28;
             this.label6.Text = "x";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox5
             // 
@@ -821,16 +801,17 @@ namespace Display
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1058, 584);
+            this.ClientSize = new System.Drawing.Size(1059, 591);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.EmployeeGrid);
+            this.Controls.Add(this.employeeGrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminEmployees";
-            ((System.ComponentModel.ISupportInitialize)(this.EmployeeGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -851,7 +832,7 @@ namespace Display
 
         #endregion
 
-        private System.Windows.Forms.DataGridView EmployeeGrid;
+        private System.Windows.Forms.DataGridView employeeGrid;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
@@ -867,28 +848,27 @@ namespace Display
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button RefreshButton;
-        private System.Windows.Forms.ComboBox CityDropBox;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ComboBox txtCityType;
         private System.Windows.Forms.Label ManageEmployeeLabel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label btnExit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelCity;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox RoleTxt;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button UpdateButton;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CityDropBoxTxt;
+        private System.Windows.Forms.ComboBox txtCity;
         private System.Windows.Forms.Label CityLabel;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelRole;
-        private System.Windows.Forms.TextBox PasswordTxT;
-        private System.Windows.Forms.TextBox NameTxt;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtNam;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Panel panel5;
@@ -908,5 +888,7 @@ namespace Display
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label btnLogout;
         private System.Windows.Forms.Label btnMenu;
+        private System.Windows.Forms.ComboBox txtRole;
+        private System.Windows.Forms.Button updateButton;
     }
 }

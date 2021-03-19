@@ -36,13 +36,6 @@
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-            var login = new AdminMenu();
-            this.Hide();
-            login.Show();
-        }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -100,16 +93,6 @@
             return false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            var editedClothe = GetEditedProduct();
-            clotheBusiness.Update(editedClothe);
-            UpdateGrid();
-            ResetSelect();
-            ToggleSaveUpdate();
-            ClearBoxes();
-        }
-
         private void ClearBoxes()
         {
             txtType.Text = "";
@@ -138,9 +121,21 @@
         }
 
         // Buttons
+        private void label10_Click(object sender, EventArgs e)
+        {
+            var login = new AdminMenu();
+            this.Hide();
+            login.Show();
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (clothesGrid.SelectedRows.Count > 0)
+            if (clothesGrid.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("No entry selected", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 var item = clothesGrid.SelectedRows[0].Cells;
                 var id = int.Parse(item[0].Value.ToString());
@@ -149,6 +144,16 @@
                 ToggleSaveUpdate();
                 DisableSelect();
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var editedClothe = GetEditedProduct();
+            clotheBusiness.Update(editedClothe);
+            UpdateGrid();
+            ResetSelect();
+            ToggleSaveUpdate();
+            ClearBoxes();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -162,7 +167,12 @@
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            if (clothesGrid.SelectedRows.Count > 0)
+            if (clothesGrid.CurrentRow.DataBoundItem == null)
+            {
+                MessageBox.Show("No entry selected", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 var item = clothesGrid.SelectedRows[0].Cells;
                 var id = int.Parse(item[0].Value.ToString());
@@ -182,10 +192,13 @@
             var city = txtCity;
             const bool delivered = false;
 
-            if (type.Text == "" || name.Text == "" || quantity.Value == 0
-                || decimal.Parse(price.Text) <= 0 || !CityCheck(city.Text))
+
+            if (String.IsNullOrWhiteSpace(type.Text) || String.IsNullOrWhiteSpace(name.Text)
+            || String.IsNullOrWhiteSpace(txtCity.Text) || !CityCheck(city.Text)
+            || quantity.Value == 0 || decimal.Parse(price.Text) <= 0)
             {
-                wrongInput.Text = "Wrong input";
+                MessageBox.Show("One or more entries are empty", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -200,8 +213,6 @@
                     Delivered = delivered
                 };
                 clotheBusiness.Add(clothe);
-
-                wrongInput.Text = "";
             }
 
             ClearBoxes();

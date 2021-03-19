@@ -1,18 +1,90 @@
-﻿using System;
-using Data.Entities;
-using Data;
-using Business;
-using System.Windows.Forms;
-
-namespace Display
+﻿namespace Display
 {
+    using System;
+    using Business;
+    using System.Linq;
+    using Data.Entities;
+    using System.Windows.Forms;
+
     public partial class AdminEmployees : Form
     {
-        private EmployeeBusiness employeeBusiness;
+        private EmployeeBusiness employeeBusiness = new EmployeeBusiness();
         private Employee employee;
+        private int editId = 0;
+
         public AdminEmployees()
         {
             InitializeComponent();
+            UpdateGrid();
+            SaveButton.Enabled = false;
+            UpdateButton.Enabled = true;
+        }
+
+        private void ToggleSaveUpdate()
+        {
+            if (UpdateButton.Enabled)
+            {
+                SaveButton.Enabled = true;
+                UpdateButton.Enabled = false;
+            }
+            else
+            {
+                SaveButton.Enabled = false;
+                UpdateButton.Enabled = true;
+            }
+        }
+
+        private void UpdateTextboxes(int id)
+        {
+            var employee = employeeBusiness.Get(id);
+            var role = txtRole;
+            var name = txtNam;
+            var password = txtPassword;
+            var city = txtCity;
+
+            role.Text = employee.Role;
+            name.Text = employee.Name;
+            password.Text = employee.Password;
+            city.Text = employee.City;
+        }
+
+        private void DisableSelect()
+        {
+            employeeGrid.Enabled = false;
+        }
+
+        private void UpdateGrid()
+        {
+            employeeGrid.DataSource = employeeBusiness.GetAll().Where(x => x.Name != "Admin0").ToList();
+            employeeGrid.ReadOnly = true;
+            employeeGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void ClearBoxes()
+        {
+            txtRole.Text = "";
+            txtNam.Text = "";
+            txtPassword.Text = "";
+            txtCity.Text = "";
+        }
+
+        private void ResetSelect()
+        {
+            employeeGrid.ClearSelection();
+            employeeGrid.Enabled = true;
+        }
+
+        private Employee GetEditedProduct()
+        {
+            var employee = new Employee();
+            employee.Id = editId;
+
+            employee.Role = txtRole.Text;
+            employee.Name = txtNam.Text;
+            employee.Password = txtPassword.Text;
+            employee.City = txtCity.Text;
+
+            return employee;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -20,10 +92,16 @@ namespace Display
 
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // Buttons
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(RoleTxt.Text) || String.IsNullOrWhiteSpace(NameTxt.Text)
-                || String.IsNullOrWhiteSpace(PasswordTxT.Text) || String.IsNullOrWhiteSpace(CityDropBoxTxt.Text))
+            if (String.IsNullOrWhiteSpace(txtRole.Text) || String.IsNullOrWhiteSpace(txtNam.Text)
+                || String.IsNullOrWhiteSpace(txtPassword.Text) || String.IsNullOrWhiteSpace(txtCity.Text))
             {
                 MessageBox.Show("One or more entries are empty", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -32,66 +110,92 @@ namespace Display
             {
                 employee = new Employee
                 {
-                    Role = RoleTxt.Text,
-                    Name = NameTxt.Text,
-                    Password = PasswordTxT.Text,
-                    City = CityDropBoxTxt.Text
+                    Role = txtRole.Text,
+                    Name = txtNam.Text,
+                    Password = txtPassword.Text,
+                    City = txtCity.Text
                 };
-                try
-                {
-                    employeeBusiness.Add(employee);
-                }
-                catch (Exception)
-                {
-                    employeeBusiness = new EmployeeBusiness();
-                    employeeBusiness.Add(employee);
-                }
+
+                employeeBusiness.Add(employee);
+                ClearBoxes();
+                UpdateGrid();
             }
         }
+
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            if (EmployeeGrid.CurrentRow.DataBoundItem == null)
+            if (employeeGrid.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("No entry selected", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                employee = EmployeeGrid.CurrentRow.DataBoundItem as Employee;
+                employee = employeeGrid.CurrentRow.DataBoundItem as Employee;
                 employeeBusiness.Delete(employee.Id);
             }
+
+            UpdateGrid();
         }
+
         private void UpdateButton_Click(object sender, EventArgs e)
         {
-            if (EmployeeGrid.CurrentRow.DataBoundItem == null)
+            if (employeeGrid.CurrentRow.DataBoundItem == null)
             {
                 MessageBox.Show("No entry selected", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                employee = EmployeeGrid.CurrentRow.DataBoundItem as Employee;
+                employee = employeeGrid.CurrentRow.DataBoundItem as Employee;
 
-                if (String.IsNullOrWhiteSpace(RoleTxt.Text) || String.IsNullOrWhiteSpace(NameTxt.Text)
-                || String.IsNullOrWhiteSpace(PasswordTxT.Text) || String.IsNullOrWhiteSpace(CityDropBoxTxt.Text))
-                {
-                    MessageBox.Show("One or more entries are empty", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    employee.Role = RoleTxt.Text;
-                    employee.Name = NameTxt.Text;
-                    employee.Password = PasswordTxT.Text;
-                    employee.City = CityDropBoxTxt.Text;
-                    employeeBusiness.Update(employee);
-                }
+                var item = employeeGrid.SelectedRows[0].Cells;
+                var id = int.Parse(item[0].Value.ToString());
+                editId = id;
+                UpdateTextboxes(id);
+                ToggleSaveUpdate();
+                DisableSelect();
             }
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            var editedEmployee = GetEditedProduct();
+            employeeBusiness.Update(editedEmployee);
+            UpdateGrid();
+            ResetSelect();
+            ToggleSaveUpdate();
+            ClearBoxes();
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var logout = new Login();
+            this.Hide();
+            logout.Show();
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            var login = new AdminMenu();
+            this.Hide();
+            login.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            var employees = employeeBusiness.GetAll().Where(x => x.Name != "Admin0").ToList();
+            if (txtCityType.Text != "All")
+                employees = employees.Where(x => x.City == txtCityType.Text).ToList();
+
+            employeeGrid.DataSource = employees;
+        }
+
+        
     }
 }

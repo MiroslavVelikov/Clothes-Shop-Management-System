@@ -1,5 +1,4 @@
-﻿
-namespace Display
+﻿namespace Display
 {
     partial class AdminClothes
     {
@@ -35,8 +34,6 @@ namespace Display
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.wrongInput = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txtType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,8 +71,6 @@ namespace Display
             this.panel1.Controls.Add(this.btnRemove);
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.wrongInput);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtType);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label5);
@@ -142,26 +137,6 @@ namespace Display
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // wrongInput
-            // 
-            this.wrongInput.AutoSize = true;
-            this.wrongInput.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.wrongInput.ForeColor = System.Drawing.Color.Red;
-            this.wrongInput.Location = new System.Drawing.Point(95, 460);
-            this.wrongInput.Name = "wrongInput";
-            this.wrongInput.Size = new System.Drawing.Size(0, 32);
-            this.wrongInput.TabIndex = 25;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(95, 460);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 32);
-            this.label9.TabIndex = 24;
             // 
             // txtType
             // 
@@ -489,8 +464,6 @@ namespace Display
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox txtType;
-        private System.Windows.Forms.Label wrongInput;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemove;

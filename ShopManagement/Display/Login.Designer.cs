@@ -83,8 +83,8 @@ namespace Display
             this.roleBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.roleBox.FormattingEnabled = true;
             this.roleBox.Items.AddRange(new object[] {
-            "ADMIN",
-            "WORKER"});
+            "Manager",
+            "Employee"});
             this.roleBox.Location = new System.Drawing.Point(154, 239);
             this.roleBox.Name = "roleBox";
             this.roleBox.Size = new System.Drawing.Size(236, 40);
