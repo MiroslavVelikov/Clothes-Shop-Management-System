@@ -1,4 +1,12 @@
 # Clothes-Shop-Management-System
+
+### Важно!
+- Проектът се стартира от Display
+- При първо логване използвайте автоматично създадения акаунт
+  - Role: "Select Role"
+  - Username: "Admin0"
+  - Password: ""
+
 ## MVC
 Разделили сме ги на 3 отделни части
 1. Data - Слой за данни
