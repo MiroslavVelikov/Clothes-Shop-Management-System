@@ -7097,26 +7097,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Traqn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Desktop\\Shop-Management\\ShopManagement\\TestLastLog\\TestLastLog.csproj",
+      "projectUniqueName": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\TestLastLog\\TestLastLog.csproj",
       "projectName": "TestLastLog",
-      "projectPath": "C:\\Users\\User\\Desktop\\Shop-Management\\ShopManagement\\TestLastLog\\TestLastLog.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Desktop\\Shop-Management\\ShopManagement\\TestLastLog\\obj\\",
+      "projectPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\TestLastLog\\TestLastLog.csproj",
+      "packagesPath": "C:\\Users\\Traqn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\TestLastLog\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Traqn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7130,8 +7123,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\User\\Desktop\\Shop-Management\\ShopManagement\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\User\\Desktop\\Shop-Management\\ShopManagement\\Data\\Data.csproj"
+            "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Traqn\\Source\\Repos\\Clothes-Shop-Management-System\\ShopManagement\\Data\\Data.csproj"
             }
           }
         }

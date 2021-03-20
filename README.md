@@ -41,6 +41,6 @@
 - Miroslav V. 
   - mir.velikov@gmail.com
 - Trayan Sht.
-  - 
+  - trayanshterionov777@gmail.com
 
 ### Също благодарим на Daniela M.(danieliya@abv.bg) за предоставеното лого
