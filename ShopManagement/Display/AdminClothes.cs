@@ -9,6 +9,7 @@
     public partial class AdminClothes : Form
     {
         private ClotheBusiness clotheBusiness = new ClotheBusiness();
+        private LastLogBusiness lastLogBusiness = new LastLogBusiness();
         private int editId = 0;
 
         public AdminClothes()
@@ -120,6 +121,13 @@
             return clothe;
         }
 
+        private bool IsItPositive(decimal price)
+        {
+            if (price > 0)
+                return true;
+            return false;
+        }
+
         // Buttons
         private void label10_Click(object sender, EventArgs e)
         {
@@ -149,9 +157,19 @@
         private void btnSave_Click(object sender, EventArgs e)
         {
             var editedClothe = GetEditedProduct();
-            clotheBusiness.Update(editedClothe);
-            UpdateGrid();
-            ResetSelect();
+            if (IsItPositive(editedClothe.Price))
+            {
+                clotheBusiness.Update(editedClothe);
+                UpdateGrid();
+                ResetSelect();
+                ClearBoxes();
+            }
+            else
+            {
+                MessageBox.Show("Price must be positive integer", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             ToggleSaveUpdate();
             ClearBoxes();
         }
@@ -191,11 +209,16 @@
             var sex = txtSex;
             var city = txtCity;
             const bool delivered = false;
+            decimal valuePrice;
 
-
-            if (String.IsNullOrWhiteSpace(type.Text) || String.IsNullOrWhiteSpace(name.Text)
+            if (!decimal.TryParse(price.Text, out valuePrice))
+            {
+                MessageBox.Show("Price must be positive integer", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (String.IsNullOrWhiteSpace(type.Text) || String.IsNullOrWhiteSpace(name.Text)
             || String.IsNullOrWhiteSpace(txtCity.Text) || !CityCheck(city.Text)
-            || quantity.Value == 0 || decimal.Parse(price.Text) <= 0)
+            || quantity.Value == 0 || !IsItPositive(valuePrice))
             {
                 MessageBox.Show("One or more entries are empty", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -207,7 +230,7 @@
                     Type = type.Text,
                     Name = name.Text,
                     Quantity = int.Parse(quantity.Value.ToString().Split('.')[0]),
-                    Price = decimal.Parse(price.Text),
+                    Price = valuePrice,
                     Sex = sex.Text,
                     City = city.Text,
                     Delivered = delivered
@@ -221,7 +244,6 @@
 
         private void btnLogout_Click_1(object sender, EventArgs e)
         {
-            var lastLogBusiness = new LastLogBusiness();
             var log = lastLogBusiness.Get(1);
             log.IsLogedIn = false;
             lastLogBusiness.Update(log);

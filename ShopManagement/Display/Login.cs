@@ -46,13 +46,6 @@
             var password = passwordBox;
             var role = roleBox;
             var employees = employeeBusiness.GetAll();
-            
-            var log = lastLogBusiness.Get(1);
-            log.Name = username.Text;
-            log.Password = password.Text;
-            log.Role = role.Text;
-            log.IsLogedIn = true;
-            lastLogBusiness.Update(log);
 
             foreach (var employee in employees)
             {
@@ -60,6 +53,16 @@
                     && employee.Password == password.Text
                     && employee.Role == role.Text)
                 {
+                    var log = lastLogBusiness.Get(1);
+                    if (log == null)
+                        log = new LastLog();
+
+                    log.Name = username.Text;
+                    log.Password = password.Text;
+                    log.Role = role.Text;
+                    log.IsLogedIn = true;
+                    lastLogBusiness.Update(log);
+
                     this.Hide();
 
                     if (role.Text == "Manager" || role.Text == "Select Role")

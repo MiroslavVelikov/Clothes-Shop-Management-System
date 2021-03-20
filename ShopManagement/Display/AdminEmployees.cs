@@ -100,7 +100,12 @@
         // Buttons
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtRole.Text) || String.IsNullOrWhiteSpace(txtNam.Text)
+            if (employeeBusiness.GetAll().Select(x => x.Name).Contains(txtNam.Text))
+            {
+                MessageBox.Show("User with the same name already exist", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (String.IsNullOrWhiteSpace(txtRole.Text) || String.IsNullOrWhiteSpace(txtNam.Text)
                 || String.IsNullOrWhiteSpace(txtPassword.Text) || String.IsNullOrWhiteSpace(txtCity.Text))
             {
                 MessageBox.Show("One or more entries are empty", "Error",

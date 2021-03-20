@@ -7,6 +7,17 @@
     {
         private LastLogContext lastLogContext;
 
+        public string Add(LastLog log)
+        {
+            using (lastLogContext = new LastLogContext())
+            {
+                lastLogContext.LastLog.Add(log);
+                lastLogContext.SaveChanges();
+            }
+
+            return "The log was added";
+        }
+
         /// <summary>
         /// Get single log from the database by Id
         /// </summary>
